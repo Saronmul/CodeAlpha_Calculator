@@ -1,0 +1,108 @@
+
+/* Apply consistent sizing to every element */
+* {
+    box-sizing: border-box;
+}
+
+/* Style the whole webpage */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #101827;
+    font-family: Arial, sans-serif;
+}
+
+/* Calculator outer box */
+.calculator {
+    width: 100%;
+    max-width: 340px;
+    padding: 24px;
+    border-radius: 20px;
+    background: #1e293b;
+    box-shadow: 0 15px 40px #0005;
+}
+
+/* Calculator heading */
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 26px;
+}
+
+/* Number display */
+#display {
+    width: 100%;
+    height: 75px;
+    margin-bottom: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #0f172a;
+    color: white;
+    text-align: right;
+    font-size: 32px;
+}
+
+/* Arrange buttons in four columns */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* General button design */
+button {
+    min-width: 0;
+    height: 56px;
+    border: none;
+    border-radius: 12px;
+    background: #334155;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+/* Effect when the mouse hovers over a button */
+button:hover {
+    background: #475569;
+    transform: translateY(-2px);
+}
+
+/* Special buttons */
+button[data-action="clear"],
+button[data-action="delete"] {
+    background: #64748b;
+}
+
+/* Arithmetic operator buttons */
+button[data-action="operator"] {
+    background: #2563eb;
+}
+
+/* Equals button */
+button[data-action="equals"] {
+    background: #16a34a;
+    grid-row: span 2;
+    height: auto;
+}
+
+/* Make the zero button wider */
+button.zero {
+    grid-column: span 2;
+}
+
+/* Adjust spacing on very small screens */
+@media (max-width: 360px) {
+    .calculator {
+        padding: 16px;
+    }
+
+    .buttons {
+        gap: 7px;
+    }
+}
